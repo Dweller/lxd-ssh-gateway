@@ -8,7 +8,7 @@ My recomended LXD host configuration for /etc/ssh/sshd_config are:-
 
 Then add a 'sandbox' user on your Linux server...
 
-Then install the ~sandbox/bin/gw and a ~sandbox/ssh/authorised_keys
+Then install the ~sandbox/bin/gw, ~sandbox/etc/notice and a ~sandbox/.ssh/authorised_keys
 Limitation with this method is a key can only be used to forward to a single container.
 See the authorized_keys.example for the command="$HOME/bin/gw <container name> ssh-rsa <public key> syntax.
 
