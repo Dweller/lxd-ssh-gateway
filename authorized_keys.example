@@ -1,0 +1,4 @@
+command="$HOME/bin/gw container-X" ssh-rsa <unique rsa public key> dweller@the-threshold.org@container-X
+command="$HOME/bin/gw container-Y" ssh-rsa <unique rsa public key> dweller@the-threshold.org@container-Y
+
+
