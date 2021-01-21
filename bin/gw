@@ -1,0 +1,30 @@
+#!/bin/bash
+
+function motd {
+	figlet "Welcome"
+	cat $HOME/etc/notice
+}
+
+mkdir -p ~/logs/
+date >> ~/logs/gw.log
+echo "$SSH_ORIGINAL_COMMAND" >> ~/logs/gw.log
+
+if [ -n "$SSH_ORIGINAL_COMMAND" ];
+then
+	if [ "$SSH_ORIGINAL_COMMAND" = "backup" ];
+	then
+		motd
+		echo "Exporting $1 - Please wait"
+		lxc -v export $1 $HOME/backup/$1-export.tar.gz
+		exit
+	fi
+	CMD="$SSH_ORIGINAL_COMMAND"
+	OPT="--mode=noninteractive"
+else
+	motd
+	CMD="bash"
+	OPT="--mode=interactive"
+fi
+exec lxc exec --user 1000 --group 1000  --cwd=/home/ubuntu $1 "$OPT" "$CMD"
+exit
+
