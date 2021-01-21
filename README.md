@@ -3,8 +3,11 @@ Forward incoming ssh connections for a single user into containers
 
 Very simple example which demonstrates the concept..
 
-My recomended LXD host configuration for /etc/ssh/sshd_config are:-
+My recomendation for the LXD host configuration for /etc/ssh/sshd_config are:-
+```
   PasswordAuthentication no
+  PermitUserEnvironment yes
+```
 
 Then add a 'sandbox' user on your Linux server...
 
