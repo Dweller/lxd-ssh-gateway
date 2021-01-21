@@ -22,5 +22,12 @@ The containers I've been building are Ubuntu 20.10 they don't need to run ssh to
 
 e.g.
 ```
-   lxc launch ubuntu:20.10 container-X
+   #lxc launch ubuntu:20.10 container-X
+```
+
+Assuming thats all installed and working some examples of usage:-
+```
+ssh -i ~/.ssh/priv.key sandbox@<host address/ip>
+sftp -i ~/.ssh/priv.key sandbox@<host address/ip>
+scp -i ~/.ssh/priv.key /etc/hosts sandbox@<host address/ip>:
 ```
