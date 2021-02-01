@@ -22,7 +22,7 @@ then
 	OPT="--mode=noninteractive"
 else
 	motd
-	CMD="bash"
+	CMD="bash -l"
 	OPT="--mode=interactive"
 fi
 exec lxc exec --user 1000 --group 1000  --cwd=/home/ubuntu $OPT $1 -- $CMD
