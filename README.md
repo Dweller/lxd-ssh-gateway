@@ -17,7 +17,7 @@ See the authorized_keys.example for the command="$HOME/bin/gw <container name> s
 
 Make sure the permissions/ownership are correct..
 ```
-  #chown -R sandbox:sandbow ~sandbow
+  #chown -R sandbox:sandbow ~sandbox
   #chmod -R g-rewx,o-rwx ~ssandbox/bin
   ```
 
